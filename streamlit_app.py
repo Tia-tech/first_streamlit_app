@@ -32,8 +32,9 @@ my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * FROM fruit_load_list")
 my_data_rows = my_cur.fetchall()
 
-# Adding a second text box for the new fruit
+# Adding a second text box for the new fruit - moved outside any loop or conditional
 new_fruit = streamlit.text_input('Enter a new fruit to add to the list', '', key='new_fruit_input')
+
 if new_fruit:
     my_data_rows.append((new_fruit,))
 
